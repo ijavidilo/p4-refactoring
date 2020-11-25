@@ -31,4 +31,8 @@ public enum Color {
         return this.equals(Color.NULL);
     }
 
+    boolean isNotNull() {
+        return !(this.isNull());
+    }
+
 }

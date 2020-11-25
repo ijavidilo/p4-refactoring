@@ -34,4 +34,9 @@ public class DraughtTest {
     public void testNullGetCodeThenAssertionError() {
         new Draught(null).getColor();
     }
+
+    @Test
+    public void testNullGetCodeThenTrue() {
+        assertThat(new Draught(Color.NULL).getColor(), is(Color.NULL));
+    }
 }
