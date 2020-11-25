@@ -21,7 +21,7 @@ public class ColorTest {
         assertThat(Color.BLACK.isInitialRow(-999), is(Boolean.TRUE));
     }
 
-    private static Coordinate whitePawnCoordinate() {
+    private static Coordinate nullPawnCoordinate() {
         Coordinate coordinate = new Coordinate(1, 1);
         return coordinate;
     }
@@ -33,7 +33,7 @@ public class ColorTest {
 
     @Test
     public void testWhiteInitialColor() {
-        assertThat(Color.getInitialColor(whitePawnCoordinate()), is(nullValue()));
+        assertThat(Color.getInitialColor(nullPawnCoordinate()), is(Color.NULL));
     }
 
     @Test
