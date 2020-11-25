@@ -17,7 +17,7 @@ Entrega de un proyecto público en git varias ramas:
     * Modelo del dominio.
     * Requisitos: Puedes encontrar los requisitos en la carpeta /Damas de este mismo repositorio.
     * Código inicial: https://github.com/ijavidilo/p3-damas/tree/unitTestWithMockito/solution.Java
-* **nullObjectPattern**, con:
+>* **nullObjectPattern**, con:
 >    * solución en Java o similar (fuertemente tipado) basada en el capitulo de Diseño y el proyecto ticTacToe
 >        * Modelo del Dominio: https://github.com/ijavidilo/p4-refactoring/tree/master#modelo-del-dominio
 >        * Implementación: https://github.com/ijavidilo/p4-refactoring/tree/nullObjectPattern/solution.Java/src/main/java/usantatecla/draughts

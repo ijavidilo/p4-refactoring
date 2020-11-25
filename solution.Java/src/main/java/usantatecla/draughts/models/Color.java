@@ -2,7 +2,8 @@ package usantatecla.draughts.models;
 
 public enum Color {
     WHITE,
-    BLACK;
+    BLACK,
+    NULL;
 
     private final int[] LIMITS = new int[]{5, 2};
 
@@ -22,6 +23,10 @@ public enum Color {
                 if (color.isInitialRow(coordinate.getRow()))
                     return color;
         return null;
+    }
+
+    boolean isNull() {
+        return this.equals(Color.NULL);
     }
 	
 }

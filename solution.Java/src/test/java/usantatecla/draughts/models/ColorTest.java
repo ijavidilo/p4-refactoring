@@ -41,4 +41,14 @@ public class ColorTest {
         assertThat(Color.getInitialColor(blackPawnCoordinate()), is(equalTo(Color.BLACK)));
     }
 
+    @Test
+    public void testIsNullColorThenTrue() {
+        assertThat(Color.NULL.isNull(), is(Boolean.TRUE));
+    }
+
+    @Test
+    public void testIsNotNullColorThenFalse() {
+        assertThat(Color.WHITE.isNull(), is(Boolean.FALSE));
+    }
+
 }
