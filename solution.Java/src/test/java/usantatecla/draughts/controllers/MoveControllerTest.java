@@ -35,7 +35,7 @@ public class MoveControllerTest {
         Coordinate origin = new Coordinate(7, 0);
         Coordinate target = new Coordinate(6, 1);
 
-        assertThat(moveController.move(origin, target), is(nullValue()));
+        assertThat(moveController.move(origin, target), is(Error.NULL));
     }
 
     @Test

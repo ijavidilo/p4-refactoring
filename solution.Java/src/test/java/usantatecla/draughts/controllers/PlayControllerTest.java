@@ -2,10 +2,10 @@ package usantatecla.draughts.controllers;
 
 import org.junit.Before;
 import org.junit.Test;
+import usantatecla.draughts.models.Error;
 import usantatecla.draughts.models.*;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class PlayControllerTest {
@@ -34,7 +34,7 @@ public class PlayControllerTest {
         Coordinate origin = new Coordinate(7, 0);
         Coordinate target = new Coordinate(6, 1);
 
-        assertThat(playController.move(origin, target), is(nullValue()));
+        assertThat(playController.move(origin, target), is(Error.NULL));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class PlayControllerTest {
         Game game = this.gameBuilder.build();
         playController = new PlayController(game, new State());
 
-        assertThat(playController.isBlocked(), is(Boolean.FALSE));
+        assertThat(playController.isBlocked(), is(Boolean.TRUE));
     }
 
     @Test(expected = AssertionError.class)

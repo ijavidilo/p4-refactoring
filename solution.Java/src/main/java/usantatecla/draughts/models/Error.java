@@ -14,12 +14,12 @@ public enum Error {
     TOO_MUCH_JUMPS,
     NULL;
 
-    public boolean isNull(Error error) {
-        return error == null || NULL.equals(error);
+    public boolean isNull() {
+        return this == null || this.equals(NULL);
     }
 
-    public boolean isNotNull(Error error) {
-        return !isNull(error);
+    public boolean isNotNull() {
+        return !isNull();
     }
-    
+
 }

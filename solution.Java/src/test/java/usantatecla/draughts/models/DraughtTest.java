@@ -17,7 +17,7 @@ public class DraughtTest {
 
     @Test
     public void testNullButCorrectDiagonalMovementThenNull() {
-        assertThat(draught.isCorrectDiagonalMovement(1, 0, null), is(nullValue()));
+        assertThat(draught.isCorrectDiagonalMovement(1, 0, null), is(Error.NULL));
     }
 
     @Test
