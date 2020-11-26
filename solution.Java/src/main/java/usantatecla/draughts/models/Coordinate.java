@@ -10,7 +10,7 @@ public class Coordinate extends usantatecla.draughts.utils.Coordinate {
     private static final int DIMENSION = UPPER_LIMIT + 1;
 
     public Coordinate(int row, int column) {
-        super(row, column, LOWER_LIMIT, UPPER_LIMIT, DIMENSION);
+        super(row, column);
     }
 
     public static Coordinate getInstance(String format) {
@@ -84,6 +84,19 @@ public class Coordinate extends usantatecla.draughts.utils.Coordinate {
                 diagonalCoordinates.add(diagonalCoordinate);
         }
         return diagonalCoordinates;
+    }
+
+    public boolean isLast() {
+        return this.row == UPPER_LIMIT;
+    }
+
+    public boolean isFirst() {
+        return this.row == LOWER_LIMIT;
+    }
+
+    public boolean isWithIn() {
+        return LOWER_LIMIT <= this.row && this.row <= UPPER_LIMIT && LOWER_LIMIT <= this.column
+                && this.column <= UPPER_LIMIT;
     }
 
     @Override

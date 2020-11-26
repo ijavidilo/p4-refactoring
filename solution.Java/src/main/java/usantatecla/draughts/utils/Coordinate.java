@@ -4,9 +4,6 @@ public class Coordinate {
 
     protected int row;
     protected int column;
-    protected int lowerLimit;
-    protected int upperLimit;
-    protected int dimension;
 
     protected Coordinate() {
     }
@@ -16,44 +13,12 @@ public class Coordinate {
         this.column = column;
     }
 
-    protected Coordinate(int row, int column, int lowerLimit, int upperLimit, int dimension) {
-        this(row, column);
-        this.lowerLimit = lowerLimit;
-        this.upperLimit = upperLimit;
-        this.dimension = dimension;
-    }
-
     public int getRow() {
         return this.row;
     }
 
     public int getColumn() {
         return this.column;
-    }
-
-    public int getLowerLimit() {
-        return this.lowerLimit;
-    }
-
-    public int getUpperLimit() {
-        return this.upperLimit;
-    }
-
-    public int getDimensionValue() {
-        return this.dimension;
-    }
-
-    public boolean isLast() {
-        return this.row == this.upperLimit;
-    }
-
-    public boolean isFirst() {
-        return this.row == this.lowerLimit;
-    }
-
-    public boolean isWithIn() {
-        return this.lowerLimit <= this.row && this.row <= this.upperLimit && this.lowerLimit <= this.column
-                && this.column <= this.upperLimit;
     }
 
     public boolean isBlack() {
