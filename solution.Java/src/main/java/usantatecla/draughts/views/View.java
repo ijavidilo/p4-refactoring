@@ -6,7 +6,9 @@ import usantatecla.draughts.controllers.PlayController;
 import usantatecla.draughts.controllers.ResumeController;
 import usantatecla.draughts.controllers.StartController;
 
-public class View implements InteractorControllersVisitor {
+public class View extends SubView implements InteractorControllersVisitor {
+
+    private static final String TITTLE = "Draughts";
 
     private StartView startView;
     private PlayView playView;
@@ -26,7 +28,10 @@ public class View implements InteractorControllersVisitor {
     @Override
     public void visit(StartController startController) {
         assert startController != null;
-        this.startView.interact(startController);
+
+        this.console.writeln(TITTLE);
+        new GameView().write(startController);
+        startController.start();
     }
 
     @Override
