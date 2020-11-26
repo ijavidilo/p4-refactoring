@@ -1,6 +1,6 @@
 # P4: Refactoring - Javier Diaz Lopez (Parte 2: Coordenada genérica)
   * ## Anotaciones alumno: 
-  > En el código la clase coordenada esta acoplada y  se ha implementado una nueva clase coordenada generica en el paquete utils para así	descolapsar una jerarquia.
+  > El código la clase coordenada esta acoplado y se ha implementado una nueva clase coordenada generica en el paquete utils para así	descolapsar una jerarquia.
 
 ## Modelo del Dominio
 Como jugar: https://www.youtube.com/watch?v=yFrAN-LFZRU
