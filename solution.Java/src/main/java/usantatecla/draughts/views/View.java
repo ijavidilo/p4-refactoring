@@ -10,12 +10,10 @@ public class View extends SubView implements InteractorControllersVisitor {
 
     private static final String TITTLE = "Draughts";
 
-    private StartView startView;
     private PlayView playView;
     private ResumeView resumeView;
 
     public View(){
-        this.startView = new StartView();
         this.playView = new PlayView();
         this.resumeView = new ResumeView();
     }
