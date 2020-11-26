@@ -4,18 +4,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import usantatecla.draughts.controllers.InteractorController;
 import usantatecla.draughts.controllers.PlayController;
 import usantatecla.draughts.controllers.ResumeController;
 import usantatecla.draughts.controllers.StartController;
+import usantatecla.draughts.utils.Console;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class ViewTest {
-
-    @Mock
-    private StartView startView;
 
     @Mock
     private PlayView playView;
@@ -34,6 +33,9 @@ public class ViewTest {
 
     @Mock
     private ResumeController resumeController;
+
+    @Mock
+    private Console console;
 
     @InjectMocks
     private View view;
@@ -66,7 +68,9 @@ public class ViewTest {
     @Test
     public void testGivenViewWhenVisitStartControllerThenOk() {
         this.view.visit(this.startController);
-        verify(this.startView).interact(this.startController);
+
+        verify(this.console).writeln(Mockito.anyString());
+        verify(this.startController).start();
     }
 
     @Test(expected = AssertionError.class)

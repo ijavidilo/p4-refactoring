@@ -8,7 +8,6 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
         PlayViewTest.class,
         ResumeViewTest.class,
-        StartViewTest.class,
         SubViewTest.class,
         ViewTest.class
 })
