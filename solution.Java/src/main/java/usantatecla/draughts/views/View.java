@@ -18,6 +18,12 @@ import java.util.regex.Pattern;
 
 public class View implements InteractorControllersVisitor {
 
+    public static final int ZERO = 0;
+    public static final int STDIN_SECOND_PART = 2;
+    public static final char POINT_DELIMITER = '.';
+    public static final int STDIN_FIRST_PART = 1;
+    public static final String SPACE = " ";
+    public static final String BLANK_SPACE = "";
     private static final String TITTLE = "Draughts";
     private static final String MESSAGE = "¿Queréis jugar otra";
     private static final String COLOR_PARAM = "#color";
@@ -27,7 +33,7 @@ public class View implements InteractorControllersVisitor {
     private static final String MOVEMENT_FORMAT = "[1-8]{2}(\\.[1-8]{2}){1,2}";
     private static final String ERROR_MESSAGE = "Error!!! Formato incorrecto";
     private static final String LOST_MESSAGE = "Derrota!!! No puedes mover tus fichas!!!";
-    private String string;
+    private String stdin;
 
     private YesNoDialog yesNoDialog;
 
@@ -58,7 +64,7 @@ public class View implements InteractorControllersVisitor {
         Error error;
         do {
             error = null;
-            this.string = this.read(playController.getColor());
+            this.stdin = this.read(playController.getColor());
             if (this.isCanceledFormat())
                 playController.cancel();
             else if (!this.isMoveFormat()) {
@@ -79,11 +85,11 @@ public class View implements InteractorControllersVisitor {
     }
 
     private boolean isCanceledFormat() {
-        return string.equals(CANCEL_FORMAT);
+        return stdin.equals(CANCEL_FORMAT);
     }
 
     private boolean isMoveFormat() {
-        return Pattern.compile(MOVEMENT_FORMAT).matcher(string).find();
+        return Pattern.compile(MOVEMENT_FORMAT).matcher(stdin).find();
     }
 
     private void writeError() {
@@ -93,11 +99,11 @@ public class View implements InteractorControllersVisitor {
     private Coordinate[] getCoordinates() {
         assert this.isMoveFormat();
         List<Coordinate> coordinateList = new ArrayList<Coordinate>();
-        while (string.length() > 0) {
-            coordinateList.add(Coordinate.getInstance(string.substring(0, 2)));
-            string = string.substring(2, string.length());
-            if (string.length() > 0 && string.charAt(0) == '.')
-                string = string.substring(1, string.length());
+        while (stdin.length() > ZERO) {
+            coordinateList.add(Coordinate.getInstance(stdin.substring(0, 2)));
+            stdin = stdin.substring(STDIN_SECOND_PART);
+            if (stdin.length() > ZERO && stdin.charAt(ZERO) == POINT_DELIMITER)
+                stdin = stdin.substring(STDIN_FIRST_PART);
         }
         Coordinate[] coordinates = new Coordinate[coordinateList.size()];
         for (int i = 0; i < coordinates.length; i++) {
@@ -129,22 +135,22 @@ public class View implements InteractorControllersVisitor {
     }
 
     private void writeNumbersLine(final int DIMENSION) {
-        this.console.write(" ");
+        this.console.write(SPACE);
         for (int i = 0; i < DIMENSION; i++)
-            this.console.write((i + 1) + "");
+            this.console.write((i + 1) + BLANK_SPACE);
         this.console.writeln();
     }
 
     private void writePiecesRow(final int row, InteractorController controller) {
-        this.console.write((row + 1) + "");
+        this.console.write((row + 1) + BLANK_SPACE);
         for (int j = 0; j < controller.getDimension(); j++) {
             Piece piece = controller.getPiece(new Coordinate(row, j));
             if (piece == null)
-                this.console.write(" ");
+                this.console.write(SPACE);
             else
                 this.console.write(piece.getCode());
         }
-        this.console.writeln((row + 1) + "");
+        this.console.writeln((row + 1) + BLANK_SPACE);
     }
 
 }
