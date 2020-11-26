@@ -10,7 +10,7 @@ public class Coordinate extends usantatecla.draughts.utils.Coordinate {
     private static final int DIMENSION = UPPER_LIMIT + 1;
 
     public Coordinate(int row, int column) {
-        super(row, column);
+        super(row, column, LOWER_LIMIT, UPPER_LIMIT, DIMENSION);
     }
 
     public static Coordinate getInstance(String format) {
@@ -28,9 +28,8 @@ public class Coordinate extends usantatecla.draughts.utils.Coordinate {
         }
     }
 
-    public boolean isWithIn() {
-        return Coordinate.LOWER_LIMIT <= row && row <= Coordinate.UPPER_LIMIT && Coordinate.LOWER_LIMIT <= column
-                && column <= Coordinate.UPPER_LIMIT;
+    public static int getDimension() {
+        return Coordinate.DIMENSION;
     }
 
     private Coordinate substract(Coordinate coordinate) {
@@ -44,8 +43,8 @@ public class Coordinate extends usantatecla.draughts.utils.Coordinate {
     Direction getDirection(Coordinate coordinate) {
         assert coordinate != null;
         Coordinate substract = coordinate.substract(this);
-        for (Direction direction : Direction.values()) 
-            if (direction.isOnDirection(substract)) 
+        for (Direction direction : Direction.values())
+            if (direction.isOnDirection(substract))
                 return direction;
         return null;
     }
@@ -85,30 +84,6 @@ public class Coordinate extends usantatecla.draughts.utils.Coordinate {
                 diagonalCoordinates.add(diagonalCoordinate);
         }
         return diagonalCoordinates;
-    }
-
-    public boolean isBlack() {
-        return (this.row + this.column) % 2 != 0;
-    }
-
-    public boolean isLast() {
-        return this.row == Coordinate.UPPER_LIMIT;
-    }
-
-    public boolean isFirst() {
-        return this.row == Coordinate.LOWER_LIMIT;
-    }
-
-    public int getRow() {
-        return this.row;
-    }
-
-    public int getColumn() {
-        return this.column;
-    }
-
-    public static int getDimension() {
-        return Coordinate.DIMENSION;
     }
 
     @Override
