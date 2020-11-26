@@ -7,33 +7,25 @@ import static org.junit.Assert.assertThat;
 
 public class CoordinateTest {
 
-    private static Coordinate getFirstBlackPieceCoordinate() {
-        return new Coordinate(2, 1);
-    }
-
-    private static Coordinate getFirstWhitePieceCoordinate() {
-        return new Coordinate(5, 1);
-    }
-
     @Test
     public void testCorrectCreationCoordinateThenOk() {
-        assertThat(getFirstBlackPieceCoordinate().getRow(), is(2));
-        assertThat(getFirstBlackPieceCoordinate().getColumn(), is(1));
+        assertThat(new Coordinate(2, 1).getRow(), is(2));
+        assertThat(new Coordinate(2, 1).getColumn(), is(1));
     }
 
     @Test
     public void testBlackCoordinateThenIsTrue() {
-        assertThat(getFirstBlackPieceCoordinate().isBlack(), is(Boolean.TRUE));
+        assertThat(new Coordinate(2, 1).isBlack(), is(Boolean.TRUE));
     }
 
     @Test
     public void testBlackCoordinateThenIsFalse() {
-        assertThat(getFirstWhitePieceCoordinate().isBlack(), is(Boolean.FALSE));
+        assertThat(new Coordinate(5, 1).isBlack(), is(Boolean.FALSE));
     }
 
     @Test
     public void testCorrectLimitCoordinateIsLastThenOk() {
-        assertThat(new Coordinate(7, 0).isLast(), is(Boolean.TRUE));
+        assertThat(new Coordinate(7, 0,0,7,8).isLast(), is(Boolean.TRUE));
     }
 
     @Test
