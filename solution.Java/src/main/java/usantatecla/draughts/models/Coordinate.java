@@ -3,17 +3,14 @@ package usantatecla.draughts.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Coordinate {
+public class Coordinate extends usantatecla.draughts.utils.Coordinate {
 
-    private int row;
-    private int column;
     private static final int LOWER_LIMIT = 0;
     private static final int UPPER_LIMIT = 7;
     private static final int DIMENSION = UPPER_LIMIT + 1;
 
     public Coordinate(int row, int column) {
-        this.row = row;
-        this.column = column;
+        super(row, column);
     }
 
     public static Coordinate getInstance(String format) {
@@ -31,7 +28,7 @@ public class Coordinate {
         }
     }
 
-    private boolean isWithIn() {
+    public boolean isWithIn() {
         return Coordinate.LOWER_LIMIT <= row && row <= Coordinate.UPPER_LIMIT && Coordinate.LOWER_LIMIT <= column
                 && column <= Coordinate.UPPER_LIMIT;
     }
@@ -90,7 +87,7 @@ public class Coordinate {
         return diagonalCoordinates;
     }
 
-    boolean isBlack() {
+    public boolean isBlack() {
         return (this.row + this.column) % 2 != 0;
     }
 
@@ -102,11 +99,11 @@ public class Coordinate {
         return this.row == Coordinate.LOWER_LIMIT;
     }
 
-    int getRow() {
+    public int getRow() {
         return this.row;
     }
 
-    int getColumn() {
+    public int getColumn() {
         return this.column;
     }
 
