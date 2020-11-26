@@ -23,24 +23,4 @@ public class CoordinateTest {
         assertThat(new Coordinate(5, 1).isBlack(), is(Boolean.FALSE));
     }
 
-    @Test
-    public void testCorrectLimitCoordinateIsLastThenOk() {
-        assertThat(new Coordinate(7, 0,0,7,8).isLast(), is(Boolean.TRUE));
-    }
-
-    @Test
-    public void testErrorLimitCoordinateIsLastThenKO() {
-        assertThat(new Coordinate(55, 0).isLast(), is(Boolean.FALSE));
-    }
-
-    @Test
-    public void testCorrectLimitCoordinateIsFirstThenOk() {
-        assertThat(new Coordinate(0, 0).isFirst(), is(Boolean.TRUE));
-    }
-
-    @Test
-    public void testErrorLimitCoordinateIsFirstThenKO() {
-        assertThat(new Coordinate(55, 0).isFirst(), is(Boolean.FALSE));
-    }
-
 }
