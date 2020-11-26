@@ -1,6 +1,6 @@
 # P4: Refactoring - Javier Diaz Lopez (Parte 1: patrón null object)
   * ## Anotaciones alumno: 
-  > Se ha aplicado el patrón null object sobre la clase Color de "las damas" correctamente.
+  > Se ha aplicado el patrón null object sobre la clase Color y la clase Error de "las damas" correctamente.
 
 ## Modelo del Dominio
 Como jugar: https://www.youtube.com/watch?v=yFrAN-LFZRU
