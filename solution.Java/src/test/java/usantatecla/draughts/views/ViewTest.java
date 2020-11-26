@@ -161,4 +161,9 @@ public class ViewTest {
         this.view.visit((ResumeController) null);
     }
 
+    @Test
+    public void testVerifyZeroInteractionsConsoleThenOk() {
+        verifyZeroInteractions(this.console);
+    }
+
 }
