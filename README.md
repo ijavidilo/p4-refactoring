@@ -1,6 +1,6 @@
 # P4: Refactoring - Javier Diaz Lopez (Parte 4: Arquitectura MVC con Vista Pasiva)
   * ## Anotaciones alumno: 
-  > En esta parte se va a cambiar el estilo arquitectónico de la práctica para que el controlador conozca a la vista (y no al revés). Arquitectura MVC con Vista Pasiva.
+  > Se ha cambiado el estilo arquitectónico de la práctica de las damas para que el controlador conozca a la vista (y no al revés). Arquitectura MVC con Vista Pasiva.
 
 ## Modelo del Dominio
 Como jugar: https://www.youtube.com/watch?v=yFrAN-LFZRU
