@@ -1,14 +1,6 @@
 # P4: Refactoring - Javier Diaz Lopez (Parte 5: TDD práctica intervalos)
   * ## Anotaciones alumno: 
   > Aplicamos TDD a la práctica de intervalos para añadir la funcionalidad isIntersected a la clase Intervalo. Además se hará un pequeño refactor de las clases Min y Max ya que tienen elementos en común.
-
-## Modelo del Dominio
-Como jugar: https://www.youtube.com/watch?v=yFrAN-LFZRU
-
-![This is a alt text.](./Damas/images/draughts.jpg "Damas.")
-
-![This is a alt text.](./Damas/images/draughtsModeloDominio.svg "Damas.")
-
 ### Instrucciones de entrega
 
 Entrega de un proyecto público en git varias ramas:
