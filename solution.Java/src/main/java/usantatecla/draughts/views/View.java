@@ -129,6 +129,10 @@ public class View implements InteractorControllersVisitor {
             resumeController.next();
     }
 
+    public boolean read() {
+        return this.yesNoDialog.read(MESSAGE);
+    }
+
     void write(InteractorController controller) {
         assert controller != null;
         final int DIMENSION = controller.getDimension();

@@ -30,6 +30,7 @@ public class StartController extends InteractorController {
 	public void control() {
 		new View().write();
 		this.write(this);
+		this.state.next();
 	}
 
 	void write(InteractorController controller) {
