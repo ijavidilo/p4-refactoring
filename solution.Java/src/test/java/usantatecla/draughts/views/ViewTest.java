@@ -60,25 +60,6 @@ public class ViewTest {
         initMocks(this);
     }
 
-    @Test
-    public void testGivenViewWhenInteractWithControllersThenOk() {
-        this.view.interact(this.interactorController);
-        verify(this.interactorController).accept(this.view);
-
-        this.view.interact(this.startController);
-        verify(this.startController).accept(this.view);
-
-        this.view.interact(this.playController);
-        verify(this.playController).accept(this.view);
-
-        this.view.interact(this.resumeController);
-        verify(this.resumeController).accept(this.view);
-    }
-
-    @Test(expected = AssertionError.class)
-    public void testGivenViewWhenInteractWithNullControllerThenError() {
-        this.view.interact(null);
-    }
 
     @Test
     public void testGivenViewWhenVisitStartControllerThenOk() {

@@ -39,10 +39,5 @@ public class StartControllerTest {
         assertNull(this.startController.getPiece(null));
     }
 
-    @Test(expected = AssertionError.class)
-    public void testAcceptMethodNullObjectThenError() {
-        this.startController.accept(null);
-    }
-
 
 }

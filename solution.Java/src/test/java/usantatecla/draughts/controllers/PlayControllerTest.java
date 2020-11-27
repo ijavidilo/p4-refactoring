@@ -65,12 +65,4 @@ public class PlayControllerTest {
         assertThat(playController.isBlocked(), is(Boolean.TRUE));
     }
 
-    @Test(expected = AssertionError.class)
-    public void testAcceptMethodNullObjectThenError() {
-        Game game = this.gameBuilder.build();
-        playController = new PlayController(game, new State());
-
-        this.playController.accept(null);
-    }
-
 }

@@ -47,9 +47,4 @@ public class ResumeControllerTest {
         assertThat(this.state.getValueState(), is(StateValue.INITIAL));
     }
 
-    @Test(expected = AssertionError.class)
-    public void testAcceptMethodNullObjectThenError() {
-        this.resumeController.accept(null);
-    }
-
 }
