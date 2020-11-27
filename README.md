@@ -1,6 +1,6 @@
-# P4: Refactoring - Javier Diaz Lopez (Parte 4: Arquitectura MVC con Vista Pasiva)
+# P4: Refactoring - Javier Diaz Lopez (Parte 5: TDD práctica intervalos)
   * ## Anotaciones alumno: 
-  > Se ha cambiado el estilo arquitectónico de la práctica de las damas para que el controlador conozca a la vista (y no al revés). Arquitectura MVC con Vista Pasiva.
+  > Aplicamos TDD a la práctica de intervalos para añadir la funcionalidad isIntersected a la clase Intervalo. Además se hará un pequeño refactor de las clases Min y Max ya que tienen elementos en común.
 
 ## Modelo del Dominio
 Como jugar: https://www.youtube.com/watch?v=yFrAN-LFZRU
@@ -32,10 +32,15 @@ Entrega de un proyecto público en git varias ramas:
         * Modelo del Dominio: https://github.com/ijavidilo/p4-refactoring/tree/master#modelo-del-dominio
         * Implementación: https://github.com/ijavidilo/p4-refactoring/tree/onlyOneView/solution.Java/src/main/java/usantatecla/draughts
         * Test unitarios: https://github.com/ijavidilo/p4-refactoring/tree/onlyOneView/solution.Java/src/test/java/usantatecla/draughts 
->* **mvp.pv**, con:
+* **mvp.pv**, con:
+    * solución en Java o similar (fuertemente tipado) basada en el capitulo de Diseño y el proyecto ticTacToe
+        * Modelo del Dominio: https://github.com/ijavidilo/p4-refactoring/tree/master#modelo-del-dominio
+        * Implementación: https://github.com/ijavidilo/p4-refactoring/tree/mvp.pv/solution.Java/src/main/java/usantatecla/draughts
+        * Test unitarios: https://github.com/ijavidilo/p4-refactoring/tree/mvp.pv/solution.Java/src/test/java/usantatecla/draughts
+>* **intervals**, con:
 >    * solución en Java o similar (fuertemente tipado) basada en el capitulo de Diseño y el proyecto ticTacToe
->        * Modelo del Dominio: https://github.com/ijavidilo/p4-refactoring/tree/master#modelo-del-dominio
->        * Implementación: https://github.com/ijavidilo/p4-refactoring/tree/mvp.pv/solution.Java/src/main/java/usantatecla/draughts
->        * Test unitarios: https://github.com/ijavidilo/p4-refactoring/tree/mvp.pv/solution.Java/src/test/java/usantatecla/draughts
+>        * Código de partida: https://github.com/USantaTecla/intervals
+>        * Implementación: https://github.com/ijavidilo/p4-refactoring/tree/intervals/solution.Java/src/main/java/usantatecla
+>        * Test unitarios: https://github.com/ijavidilo/p4-refactoring/tree/intervals/solution.Java/src/test/java/usantatecla
 
 Master Cloud Apps curso 2020/21 [MasterCloudApps](https://www.codeurjc.es/mastercloudapps/).
