@@ -16,10 +16,6 @@ public class StartController extends InteractorController {
         super(game, state);
 	}
 
-	public void start() {
-        this.state.next();
-	}
-
 	@Override
 	public void control() {
 		new View().write();

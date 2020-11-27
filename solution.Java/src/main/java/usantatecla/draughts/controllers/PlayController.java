@@ -31,23 +31,6 @@ public class PlayController extends InteractorController {
 		this.moveController = new MoveController(game, state);
 	}
 
-	public Error move(Coordinate... coordinates) {
-		return this.moveController.move(coordinates);
-	}
-
-	public void cancel() {
-		this.cancelController.cancel();
-	}
-
-	public Color getColor() {
-		return this.game.getTurnColor();
-	}
-
-	public boolean isBlocked() {
-		return this.game.isBlocked();
-	}
-
-
 	@Override
 	public void control() {
 		Error error;
@@ -67,6 +50,23 @@ public class PlayController extends InteractorController {
 			}
 		} while (error != null);
 	}
+
+	public Error move(Coordinate... coordinates) {
+		return this.moveController.move(coordinates);
+	}
+
+	public void cancel() {
+		this.cancelController.cancel();
+	}
+
+	public Color getColor() {
+		return this.game.getTurnColor();
+	}
+
+	public boolean isBlocked() {
+		return this.game.isBlocked();
+	}
+
 
 	private boolean isCanceledFormat() {
 		return stdin.equals(CANCEL_FORMAT);

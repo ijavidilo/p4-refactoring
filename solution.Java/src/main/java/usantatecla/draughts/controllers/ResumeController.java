@@ -10,15 +10,6 @@ public class ResumeController extends InteractorController {
         super(game, state);
 	}
 
-	public void next() {
-        this.state.next();
-	}
-
-	public void reset() {
-		this.state.reset();
-		this.game.reset();
-	}
-
 	@Override
 	public void control() {
 		if (new View().read()) {
