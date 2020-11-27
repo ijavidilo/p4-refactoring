@@ -19,12 +19,6 @@ public class StartControllerTest {
     }
 
     @Test
-    public void testInGameStateThenOk() {
-        this.startController.start();
-        assertThat(this.state.getValueState(), is(StateValue.IN_GAME));
-    }
-
-    @Test
     public void testCorrectGetPawnPieceThenOk() {
         assertThat(this.startController.getPiece(new Coordinate(2, 1)), is(instanceOf(Pawn.class)));
     }

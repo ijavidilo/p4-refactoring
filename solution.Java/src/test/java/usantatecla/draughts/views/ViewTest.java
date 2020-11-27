@@ -5,10 +5,6 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import usantatecla.draughts.controllers.InteractorController;
-import usantatecla.draughts.controllers.PlayController;
-import usantatecla.draughts.controllers.ResumeController;
-import usantatecla.draughts.controllers.StartController;
 import usantatecla.draughts.models.Color;
 import usantatecla.draughts.utils.Console;
 import usantatecla.draughts.utils.YesNoDialog;
@@ -31,18 +27,6 @@ public class ViewTest {
     private static final String MOVEMENT_FORMAT = "[1-8]{2}(\\.[1-8]{2}){1,2}";
     private static final String ERROR_MESSAGE = "Error!!! Formato incorrecto";
     private static final String LOST_MESSAGE = "Derrota!!! No puedes mover tus fichas!!!";
-
-    @Mock
-    private InteractorController interactorController;
-
-    @Mock
-    private StartController startController;
-
-    @Mock
-    private PlayController playController;
-
-    @Mock
-    private ResumeController resumeController;
 
     @Mock
     private Console console;
