@@ -1,13 +1,8 @@
 package usantatecla.draughts.views;
 
 import usantatecla.draughts.controllers.InteractorController;
-import usantatecla.draughts.controllers.InteractorControllersVisitor;
-import usantatecla.draughts.controllers.PlayController;
-import usantatecla.draughts.controllers.ResumeController;
-import usantatecla.draughts.controllers.StartController;
 import usantatecla.draughts.models.Color;
 import usantatecla.draughts.models.Coordinate;
-import usantatecla.draughts.models.Error;
 import usantatecla.draughts.models.Piece;
 import usantatecla.draughts.utils.Console;
 import usantatecla.draughts.utils.YesNoDialog;
@@ -16,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class View implements InteractorControllersVisitor {
+public class View {
 
     public static final int ZERO = 0;
     public static final int STDIN_SECOND_PART = 2;
@@ -44,38 +39,8 @@ public class View implements InteractorControllersVisitor {
         this.yesNoDialog = new YesNoDialog();
     }
 
-    @Override
-    public void visit(StartController startController) {
-        assert startController != null;
-
-        this.console.writeln(TITTLE);
-        this.write(startController);
-        startController.start();
-    }
-
     public void write() {
         this.console.writeln(TITTLE);
-    }
-
-    @Override
-    public void visit(PlayController playController) {
-        assert playController != null;
-        Error error;
-        do {
-            error = null;
-            this.stdin = this.read(playController.getColor());
-            if (this.isCanceledFormat())
-                playController.cancel();
-            else if (!this.isMoveFormat()) {
-                error = Error.BAD_FORMAT;
-                this.writeError();
-            } else {
-                error = playController.move(this.getCoordinates());
-                this.write(playController);
-                if (error == null && playController.isBlocked())
-                    this.writeLost();
-            }
-        } while (error != null);
     }
 
     public String read(Color color) {
@@ -113,15 +78,6 @@ public class View implements InteractorControllersVisitor {
 
     public void writeLost() {
         this.console.writeln(LOST_MESSAGE);
-    }
-
-    @Override
-    public void visit(ResumeController resumeController) {
-        assert resumeController != null;
-        if (this.yesNoDialog.read(MESSAGE))
-            resumeController.reset();
-        else
-            resumeController.next();
     }
 
     public boolean read() {
