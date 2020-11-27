@@ -14,6 +14,7 @@ import usantatecla.draughts.models.Coordinate;
 import usantatecla.draughts.utils.Console;
 import usantatecla.draughts.utils.YesNoDialog;
 
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -182,6 +183,15 @@ public class ViewTest {
         this.view.write();
 
         verify(this.console).writeln(TITTLE);
+    }
+
+    @Test
+    public void testResumeViewPVThenOk() {
+        when(this.yesNoDialog.read(MESSAGE)).thenReturn(Boolean.TRUE);
+
+        this.view.read();
+
+        assertTrue(this.view.read());
     }
 
 }
