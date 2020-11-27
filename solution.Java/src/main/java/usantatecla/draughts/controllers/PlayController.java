@@ -47,11 +47,6 @@ public class PlayController extends InteractorController {
 		return this.game.isBlocked();
 	}
 
-	@Override
-	public void accept(InteractorControllersVisitor controllersVisitor) {
-		assert controllersVisitor != null;
-		controllersVisitor.visit(this);
-	}
 
 	@Override
 	public void control() {

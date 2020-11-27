@@ -44,11 +44,6 @@ public class View implements InteractorControllersVisitor {
         this.yesNoDialog = new YesNoDialog();
     }
 
-    public void interact(InteractorController controller) {
-        assert controller != null;
-        controller.accept(this);
-    }
-
     @Override
     public void visit(StartController startController) {
         assert startController != null;
