@@ -14,10 +14,13 @@ import usantatecla.draughts.models.Coordinate;
 import usantatecla.draughts.utils.Console;
 import usantatecla.draughts.utils.YesNoDialog;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
+import static org.hamcrest.CoreMatchers.is;
+
 
 public class ViewTest {
 
@@ -194,4 +197,32 @@ public class ViewTest {
         assertTrue(this.view.read());
     }
 
+    @Test
+    public void testPlayViewReadColorPVThenOk() {
+        when(this.view.read(Color.BLACK)).thenReturn("negras");
+
+        assertThat(this.view.read(Color.BLACK), is("negras"));
+    }
+
+    @Test
+    public void testPlayViewWriteErrorPVThenOk() {
+        this.view.writeError();
+
+        verify(this.console).writeln(ERROR_MESSAGE);
+    }
+
+    @Test
+    public void testPlayViewWritePlayControllerPVThenOk() {
+        this.view.write();
+
+        verify(this.console).writeln(Mockito.anyString());
+    }
+
+    @Test
+    public void testPlayViewWriteLostPVThenOk() {
+        this.view.writeLost();
+
+        verify(this.console).writeln(LOST_MESSAGE);
+    }
+    
 }
