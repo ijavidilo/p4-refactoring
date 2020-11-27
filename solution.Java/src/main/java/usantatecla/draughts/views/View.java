@@ -83,7 +83,7 @@ public class View implements InteractorControllersVisitor {
         } while (error != null);
     }
 
-    private String read(Color color) {
+    public String read(Color color) {
         final String titleColor = PROMPT.replace(COLOR_PARAM, COLOR_VALUES[color.ordinal()]);
         return this.console.readString(titleColor);
     }
@@ -96,7 +96,7 @@ public class View implements InteractorControllersVisitor {
         return Pattern.compile(MOVEMENT_FORMAT).matcher(stdin).find();
     }
 
-    private void writeError() {
+    public void writeError() {
         this.console.writeln(ERROR_MESSAGE);
     }
 
@@ -116,7 +116,7 @@ public class View implements InteractorControllersVisitor {
         return coordinates;
     }
 
-    private void writeLost() {
+    public void writeLost() {
         this.console.writeln(LOST_MESSAGE);
     }
 
@@ -133,7 +133,7 @@ public class View implements InteractorControllersVisitor {
         return this.yesNoDialog.read(MESSAGE);
     }
 
-    void write(InteractorController controller) {
+    public void write(InteractorController controller) {
         assert controller != null;
         final int DIMENSION = controller.getDimension();
         this.writeNumbersLine(DIMENSION);
