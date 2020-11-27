@@ -8,7 +8,6 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
         CancelControllerTest.class,
         ControllerTest.class,
-        LogicTest.class,
         MoveControllerTest.class,
         PlayControllerTest.class,
         ResumeControllerTest.class,
