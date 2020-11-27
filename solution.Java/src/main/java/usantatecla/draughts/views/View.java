@@ -58,6 +58,10 @@ public class View implements InteractorControllersVisitor {
         startController.start();
     }
 
+    public void write() {
+        this.console.writeln(TITTLE);
+    }
+
     @Override
     public void visit(PlayController playController) {
         assert playController != null;

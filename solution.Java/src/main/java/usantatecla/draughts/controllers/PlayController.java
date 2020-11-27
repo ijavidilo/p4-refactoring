@@ -39,4 +39,9 @@ public class PlayController extends InteractorController {
 		controllersVisitor.visit(this);
 	}
 
+	@Override
+	public void control() {
+
+	}
+
 }

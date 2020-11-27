@@ -17,4 +17,6 @@ public abstract class InteractorController extends Controller {
 
 	abstract public void accept(InteractorControllersVisitor controllersVisitor);
 
+	public abstract void control();
+
 }
