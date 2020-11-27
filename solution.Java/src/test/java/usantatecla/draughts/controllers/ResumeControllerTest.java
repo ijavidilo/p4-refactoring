@@ -2,49 +2,44 @@ package usantatecla.draughts.controllers;
 
 import org.junit.Before;
 import org.junit.Test;
-import usantatecla.draughts.models.GameBuilder;
+import org.mockito.Mock;
 import usantatecla.draughts.models.State;
 import usantatecla.draughts.models.StateValue;
+import usantatecla.draughts.views.View;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.*;
+import static org.mockito.MockitoAnnotations.initMocks;
 
 public class ResumeControllerTest {
 
-    private static final int MAX_STATES_VALUES_LENGTH = 4;
+    private static final String MESSAGE = "¿Queréis jugar otra";
 
+    @Mock
+    private View view;
+
+    @Mock
     private State state;
-    private ResumeController resumeController;
 
-    private StateValue getGameWithFinalStateValue() {
-        this.resumeController.next();
-        this.resumeController.next();
-        return this.state.getValueState();
-    }
+    @Mock
+    private ResumeController resumeController;
 
     @Before
     public void before() {
-        this.state = new State();
-        this.resumeController = new ResumeController(new GameBuilder().build(), state);
+        initMocks(this);
     }
 
     @Test
     public void testNextStateThenOk() {
-        assertThat(getGameWithFinalStateValue(), is(StateValue.FINAL));
-    }
+        when(this.view.read()).thenReturn(Boolean.FALSE);
+        when(this.state.getValueState()).thenReturn(StateValue.INITIAL);
+        this.state.next();
 
-    @Test(expected = AssertionError.class)
-    public void testLimitNextStateThenError() {
-        for (int i = 0; i < MAX_STATES_VALUES_LENGTH; i++) {
-            this.resumeController.next();
-        }
-    }
+        this.resumeController.control();
 
-    @Test
-    public void testResetGameThenOk() {
-        getGameWithFinalStateValue();
-        this.resumeController.reset();
         assertThat(this.state.getValueState(), is(StateValue.INITIAL));
+        verify(this.state, times(1)).next();
     }
 
 }
