@@ -8,6 +8,7 @@ import org.junit.runners.Suite;
         BuilderIntervalTest.class,
         ClosedMaxTest.class,
         ClosedMinTest.class,
+        ExtremeTest.class,
         IntervalTest.class,
         MaxTest.class,
         MinTest.class})
