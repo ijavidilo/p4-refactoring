@@ -1,16 +1,16 @@
 package usantatecla;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class BuilderIntervalTest {
 
     private double min;
     private double max;
 
-    @BeforeEach
+    @Before
     public void before() {
         this.min = -2.2;
         this.max = 4.4;

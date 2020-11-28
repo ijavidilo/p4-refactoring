@@ -1,10 +1,10 @@
 package usantatecla;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class IntervalTest {
 
@@ -12,7 +12,7 @@ public class IntervalTest {
     private Point right;
     private IntervalBuilder intervalBuilder;
 
-    @BeforeEach
+    @Before
     public void before() {
         this.left = new Point(-2.2);
         this.right = new Point(4.4);
