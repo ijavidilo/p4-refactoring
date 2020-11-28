@@ -21,4 +21,8 @@ public class Point {
         return this.value + Point.DEVIATION;
     }
 
+    double getValue() {
+        return this.value;
+    }
+
 }
