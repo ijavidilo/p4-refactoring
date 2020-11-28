@@ -19,13 +19,13 @@ public class ExtremeTest {
     public void givenPointWhenIsCreatedThenTrue() {
         assertThat((this.point), is(instanceOf(Point.class)));
 
-        assertThat(this.point.getEquals(), is(this.point.getValue()));
-        assertThat(this.point.getLess(), is(this.point.getValue() - Point.DEVIATION));
-        assertThat(this.point.getGreater(), is(this.point.getValue() + Point.DEVIATION));
+        assertThat(this.point.getEquals(), is(this.point.getEquals()));
+        assertThat(this.point.getLess(), is(this.point.getEquals() - Point.DEVIATION));
+        assertThat(this.point.getGreater(), is(this.point.getEquals() + Point.DEVIATION));
 
         assertThat(this.point.getEquals(), is(not(5555.0)));
-        assertThat(this.point.getLess(), is(not(this.point.getValue() + Point.DEVIATION)));
-        assertThat(this.point.getGreater(), is(not(this.point.getValue() - Point.DEVIATION)));
+        assertThat(this.point.getLess(), is(not(this.point.getEquals() + Point.DEVIATION)));
+        assertThat(this.point.getGreater(), is(not(this.point.getEquals() - Point.DEVIATION)));
     }
 
 }
