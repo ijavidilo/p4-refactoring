@@ -6,14 +6,13 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class MinTest {
+public class MinTest extends ExtremeTest {
 
     protected Min min;
-    protected Point point;
 
     @Before
     public void before() {
-        this.point = new Point(4.4);
+        super.before();
         this.min = this.createMin();
     }
 
