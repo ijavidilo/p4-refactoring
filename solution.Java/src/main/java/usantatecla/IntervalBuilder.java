@@ -8,8 +8,16 @@ public class IntervalBuilder {
     private boolean maxConfigured;
 
     IntervalBuilder() {
-        this.minConfigured = false;
-        this.maxConfigured = false;
+        this.minConfigured = Boolean.FALSE;
+        this.maxConfigured = Boolean.FALSE;
+    }
+
+    private void minConfiguredToTrue() {
+        this.minConfigured = Boolean.TRUE;
+    }
+
+    private void maxConfiguredToTrue() {
+        this.maxConfigured = Boolean.TRUE;
     }
 
     public IntervalBuilder open(double value) {
@@ -17,23 +25,23 @@ public class IntervalBuilder {
 
         if (!this.minConfigured) {
             this.min = new Min(value);
-            this.minConfigured = true;
+            minConfiguredToTrue();
         } else if (!this.maxConfigured) {
             this.max = new Max(value);
-            this.maxConfigured = true;
+            maxConfiguredToTrue();
         }
         return this;
     }
 
     public IntervalBuilder closed(double value) {
         assert !this.minConfigured || !this.maxConfigured;
-        ;
+
         if (!this.minConfigured) {
             this.min = new ClosedMin(value);
-            this.minConfigured = true;
+            minConfiguredToTrue();
         } else if (!this.maxConfigured) {
             this.max = new ClosedMax(value);
-            this.maxConfigured = true;
+            maxConfiguredToTrue();
         }
         return this;
     }
