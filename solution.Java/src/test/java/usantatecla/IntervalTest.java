@@ -76,4 +76,11 @@ public class IntervalTest {
         assertTrue(interval_one.isIntersected(interval_two));
     }
 
+    @Test(expected = AssertionError.class)
+    public void givenOneNullIntervalWhenIsIntersectedThenError() {
+        Interval interval_one = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
+
+        assertTrue(interval_one.isIntersected(null));
+    }
+
 }
