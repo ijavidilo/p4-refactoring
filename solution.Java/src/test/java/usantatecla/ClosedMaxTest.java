@@ -13,8 +13,8 @@ public class ClosedMaxTest extends MaxTest {
 
     @Test
     @Override
-    public void givenMaxWhenIsWithinWithEqualsValue() {
-        assertTrue(this.max.isWithin(this.point.getEquals()));
+    public void givenMaxWhenIncludeWithEqualsValue() {
+        assertTrue(this.max.include(this.point.getEquals()));
     }
 
 }

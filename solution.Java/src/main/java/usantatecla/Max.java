@@ -7,7 +7,7 @@ public class Max extends Extreme {
     }
 
     @Override
-    public boolean isWithin(double value) {
+    public boolean include(double value) {
         return this.value > value;
     }
 

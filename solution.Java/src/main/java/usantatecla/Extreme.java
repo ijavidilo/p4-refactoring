@@ -8,7 +8,7 @@ public abstract class Extreme {
         this.value = value;
     }
 
-    public abstract boolean isWithin(double value);
+    public abstract boolean include(double value);
 
     @Override
     public int hashCode() {

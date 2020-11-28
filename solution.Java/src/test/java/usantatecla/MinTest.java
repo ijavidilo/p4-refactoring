@@ -21,18 +21,18 @@ public class MinTest extends ExtremeTest {
     }
 
     @Test
-    public void givenMinWhenIsWithinWithLessValueThenTrue() {
-        assertFalse(this.min.isWithin(this.point.getLess()));
+    public void givenMinWhenIncludeWithLessValueThenTrue() {
+        assertFalse(this.min.include(this.point.getLess()));
     }
 
     @Test
-    public void givenMinWhenIsWithinWithEqualsValue() {
-        assertFalse(this.min.isWithin(this.point.getEquals()));
+    public void givenMinWhenIncludeWithEqualsValue() {
+        assertFalse(this.min.include(this.point.getEquals()));
     }
 
     @Test
-    public void givenMinWhenIsWithinWithGreaterValueThenTrue() {
-        assertTrue(this.min.isWithin(this.point.getGreater()));
+    public void givenMinWhenIncludeWithGreaterValueThenTrue() {
+        assertTrue(this.min.include(this.point.getGreater()));
     }
 
 }
