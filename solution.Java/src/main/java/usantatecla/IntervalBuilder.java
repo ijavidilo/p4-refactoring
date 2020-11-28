@@ -2,8 +2,8 @@ package usantatecla;
 
 public class IntervalBuilder {
 
-    private Min min;
-    private Max max;
+    private OpenMin openMin;
+    private OpenMax openMax;
     private boolean minConfigured;
     private boolean maxConfigured;
 
@@ -24,10 +24,10 @@ public class IntervalBuilder {
         assert !this.minConfigured || !this.maxConfigured;
 
         if (!this.minConfigured) {
-            this.min = new Min(value);
+            this.openMin = new OpenMin(value);
             minConfiguredToTrue();
         } else if (!this.maxConfigured) {
-            this.max = new Max(value);
+            this.openMax = new OpenMax(value);
             maxConfiguredToTrue();
         }
         return this;
@@ -37,10 +37,10 @@ public class IntervalBuilder {
         assert !this.minConfigured || !this.maxConfigured;
 
         if (!this.minConfigured) {
-            this.min = new ClosedMin(value);
+            this.openMin = new ClosedMin(value);
             minConfiguredToTrue();
         } else if (!this.maxConfigured) {
-            this.max = new ClosedMax(value);
+            this.openMax = new ClosedMax(value);
             maxConfiguredToTrue();
         }
         return this;
@@ -48,7 +48,7 @@ public class IntervalBuilder {
 
     public Interval build() {
         assert this.minConfigured && this.maxConfigured;
-        return new Interval(this.min, this.max);
+        return new Interval(this.openMin, this.openMax);
     }
 
 }

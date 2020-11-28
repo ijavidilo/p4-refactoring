@@ -6,33 +6,33 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class MinTest extends ExtremeTest {
+public class OpenMinTest extends ExtremeTest {
 
-    protected Min min;
+    protected OpenMin openMin;
 
     @Before
     public void before() {
         super.before();
-        this.min = this.createMin();
+        this.openMin = this.createMin();
     }
 
-    protected Min createMin() {
-        return new Min(this.point.getEquals());
+    protected OpenMin createMin() {
+        return new OpenMin(this.point.getEquals());
     }
 
     @Test
     public void givenMinWhenIncludeWithLessValueThenTrue() {
-        assertFalse(this.min.include(this.point.getLess()));
+        assertFalse(this.openMin.include(this.point.getLess()));
     }
 
     @Test
     public void givenMinWhenIncludeWithEqualsValue() {
-        assertFalse(this.min.include(this.point.getEquals()));
+        assertFalse(this.openMin.include(this.point.getEquals()));
     }
 
     @Test
     public void givenMinWhenIncludeWithGreaterValueThenTrue() {
-        assertTrue(this.min.include(this.point.getGreater()));
+        assertTrue(this.openMin.include(this.point.getGreater()));
     }
 
 }

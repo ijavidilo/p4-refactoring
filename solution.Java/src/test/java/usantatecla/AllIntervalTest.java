@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
         ClosedMinTest.class,
         ExtremeTest.class,
         IntervalTest.class,
-        MaxTest.class,
-        MinTest.class})
+        OpenMaxTest.class,
+        OpenMinTest.class})
 public class AllIntervalTest {
 }

@@ -2,25 +2,25 @@ package usantatecla;
 
 public class Interval {
 
-    private Min min;
-    private Max max;
+    private OpenMin openMin;
+    private OpenMax openMax;
 
-    public Interval(Min min, Max max) {
-        assert min.value <= max.value;
-        this.min = min;
-        this.max = max;
+    public Interval(OpenMin openMin, OpenMax openMax) {
+        assert openMin.value <= openMax.value;
+        this.openMin = openMin;
+        this.openMax = openMax;
     }
 
     public boolean include(double value) {
-        return this.min.include(value) && this.max.include(value);
+        return this.openMin.include(value) && this.openMax.include(value);
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((max == null) ? 0 : max.hashCode());
-        result = prime * result + ((min == null) ? 0 : min.hashCode());
+        result = prime * result + ((openMax == null) ? 0 : openMax.hashCode());
+        result = prime * result + ((openMin == null) ? 0 : openMin.hashCode());
         return result;
     }
 
@@ -33,22 +33,22 @@ public class Interval {
         if (getClass() != obj.getClass())
             return false;
         Interval other = (Interval) obj;
-        if (max == null) {
-            if (other.max != null)
+        if (openMax == null) {
+            if (other.openMax != null)
                 return false;
-        } else if (!max.equals(other.max))
+        } else if (!openMax.equals(other.openMax))
             return false;
-        if (min == null) {
-            if (other.min != null)
+        if (openMin == null) {
+            if (other.openMin != null)
                 return false;
-        } else if (!min.equals(other.min))
+        } else if (!openMin.equals(other.openMin))
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return this.min.toString() + ", " + max.toString();
+        return this.openMin.toString() + ", " + openMax.toString();
     }
 
 }

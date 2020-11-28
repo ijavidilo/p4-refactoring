@@ -1,6 +1,6 @@
 package usantatecla;
 
-public class ClosedMax extends Max {
+public class ClosedMax extends OpenMax {
 
     public ClosedMax(double value) {
         super(value);

@@ -1,6 +1,6 @@
 package usantatecla;
 
-public class ClosedMin extends Min {
+public class ClosedMin extends OpenMin {
 
     public ClosedMin(double value) {
         super(value);

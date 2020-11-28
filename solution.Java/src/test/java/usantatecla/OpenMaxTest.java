@@ -6,33 +6,33 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class MaxTest extends ExtremeTest {
+public class OpenMaxTest extends ExtremeTest {
 
-    protected Max max;
+    protected OpenMax openMax;
 
     @Before
     public void before() {
         super.before();
-        this.max = this.createMax();
+        this.openMax = this.createMax();
     }
 
-    protected Max createMax() {
-        return new Max(this.point.getEquals());
+    protected OpenMax createMax() {
+        return new OpenMax(this.point.getEquals());
     }
 
     @Test
     public void givenMaxWhenIncludeWithLessValueThenTrue() {
-        assertTrue(this.max.include(this.point.getLess()));
+        assertTrue(this.openMax.include(this.point.getLess()));
     }
 
     @Test
     public void givenMaxWhenIncludeWithEqualsValue() {
-        assertFalse(this.max.include(this.point.getEquals()));
+        assertFalse(this.openMax.include(this.point.getEquals()));
     }
 
     @Test
     public void givenMaxWhenIncludeWithGreaterValueThenTrue() {
-        assertFalse(this.max.include(this.point.getGreater()));
+        assertFalse(this.openMax.include(this.point.getGreater()));
     }
 
 }

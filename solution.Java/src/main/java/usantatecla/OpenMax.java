@@ -1,14 +1,14 @@
 package usantatecla;
 
-public class Min extends Extreme {
+public class OpenMax extends Extreme {
 
-    public Min(double value) {
+    public OpenMax(double value) {
         super(value);
     }
 
     @Override
     public boolean include(double value) {
-        return this.value < value;
+        return this.value > value;
     }
 
 }

@@ -4,17 +4,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class ClosedMaxTest extends MaxTest {
+public class ClosedMaxTest extends OpenMaxTest {
 
     @Override
-    protected Max createMax() {
+    protected OpenMax createMax() {
         return new ClosedMax(this.point.getEquals());
     }
 
     @Test
     @Override
     public void givenMaxWhenIncludeWithEqualsValue() {
-        assertTrue(this.max.include(this.point.getEquals()));
+        assertTrue(this.openMax.include(this.point.getEquals()));
     }
 
 }

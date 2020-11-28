@@ -4,17 +4,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class ClosedMinTest extends MinTest {
+public class ClosedMinTest extends OpenMinTest {
 
     @Override
-    protected Min createMin() {
+    protected OpenMin createMin() {
         return new ClosedMin(this.point.getEquals());
     }
 
     @Test
     @Override
     public void givenMinWhenIncludeWithEqualsValue() {
-        assertTrue(this.min.include(this.point.getEquals()));
+        assertTrue(this.openMin.include(this.point.getEquals()));
     }
 
 }
