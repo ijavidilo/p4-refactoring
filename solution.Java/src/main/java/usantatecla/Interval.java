@@ -15,6 +15,10 @@ public class Interval {
         return this.openMin.include(value) && this.openMax.include(value);
     }
 
+    public boolean isIntersected(Interval interval) {
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
