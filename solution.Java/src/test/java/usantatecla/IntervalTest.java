@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class IntervalTest {
 
-    private Point left = new Point(-2.2);
-    private Point right = new Point(4.4);
+    private Point left;
+    private Point right;
     private IntervalBuilder intervalBuilder;
 
     @BeforeEach
@@ -24,14 +24,16 @@ public class IntervalTest {
         Interval interval = this.intervalBuilder.open(left.getEquals()).open(right.getEquals()).build();
         assertFalse(interval.include(left.getLess()));
         assertFalse(interval.include(left.getEquals()));
+
         assertTrue(interval.include(left.getGreater()));
         assertTrue(interval.include(right.getLess()));
+
         assertFalse(interval.include(right.getEquals()));
         assertFalse(interval.include(right.getGreater()));
     }
 
     @Test
-    public void givenIntervaOpenOpenlwhenInc3ludeWithIncludedValueThenTrue() {
+    public void givenIntervaClosedOpenlwhenIncludeWithIncludedValueThenTrue() {
         Interval interval = this.intervalBuilder.closed(left.getEquals()).open(right.getEquals()).build();
         assertFalse(interval.include(left.getLess()));
         assertTrue(interval.include(left.getEquals()));
@@ -43,7 +45,7 @@ public class IntervalTest {
     }
 
     @Test
-    public void givenIntervaOpenOpenlwhenIncludeWit3hIncludedValueThenTrue() {
+    public void givenIntervaOpenClosedwhenIncludeWit3hIncludedValueThenTrue() {
         Interval interval = this.intervalBuilder.open(left.getEquals()).closed(right.getEquals()).build();
         assertFalse(interval.include(left.getLess()));
         assertFalse(interval.include(left.getEquals()));
@@ -55,7 +57,7 @@ public class IntervalTest {
     }
 
     @Test
-    public void givenIntervaOpenOpenlwhenIncludeWithInclude5dValueThenTrue() {
+    public void givenIntervaClosedClosedwhenIncludeWithIncludedValueThenTrue() {
         Interval interval = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
         assertFalse(interval.include(left.getLess()));
         assertTrue(interval.include(left.getEquals()));
