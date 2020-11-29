@@ -11,4 +11,9 @@ public class OpenMax extends Extreme {
         return this.value > value;
     }
 
+    @Override
+    public String toString() {
+        return this.value + ")";
+    }
+
 }

@@ -17,7 +17,8 @@ public class Interval {
 
     public boolean isIntersected(Interval interval) {
         assert interval != null;
-        return true;
+        return (interval.openMax.include(this.openMin.getValue()) && interval.openMin.include(this.openMax.getValue())
+                && this.openMin.include(interval.openMax.getValue()) && this.openMax.include(interval.openMin.getValue()));
     }
 
     @Override

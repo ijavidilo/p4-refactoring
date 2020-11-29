@@ -8,7 +8,13 @@ public abstract class Extreme {
         this.value = value;
     }
 
+    double getValue() {
+        return this.value;
+    }
+
     public abstract boolean include(double value);
+
+    public abstract String toString();
 
     @Override
     public int hashCode() {
@@ -34,8 +40,4 @@ public abstract class Extreme {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return this.value + ")";
-    }
 }
