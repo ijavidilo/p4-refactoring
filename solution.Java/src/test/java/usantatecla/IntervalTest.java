@@ -68,19 +68,29 @@ public class IntervalTest {
         assertFalse(interval.include(right.getGreater()));
     }
 
-    @Test
-    public void givenTwoIntervalsThatIsIntersectedThenTrue() {
-        Interval interval_one = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
-        Interval interval_two = new IntervalBuilder().closed(left.getEquals()).closed(right.getEquals()).build();
-
-        assertTrue(interval_one.isIntersected(interval_two));
-    }
-
     @Test(expected = AssertionError.class)
     public void givenOneNullIntervalWhenIsIntersectedThenError() {
         Interval interval_one = this.intervalBuilder.closed(left.getEquals()).closed(right.getEquals()).build();
 
-        assertTrue(interval_one.isIntersected(null));
+        interval_one.isIntersected(null);
+    }
+
+    @Test
+    public void givenOneIntervalTestLeftIsIntersectedTest() {
+        Interval interval_one = new IntervalBuilder().open(new Point(-2.2).getEquals()).open(new Point(4.4).getEquals()).build();
+
+    }
+
+    @Test
+    public void givenOneIntervalTestRightIsIntersectedTest() {
+        Interval interval_one = new IntervalBuilder().open(new Point(-2.2).getEquals()).closed(new Point(4.4).getEquals()).build();
+
+    }
+
+    @Test
+    public void givenOneIntervalTestMiddleIsIntersectedTest() {
+        Interval interval_one = new IntervalBuilder().closed(new Point(-2.2).getEquals()).open(new Point(4.4).getEquals()).build();
+
     }
 
 }
