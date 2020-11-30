@@ -199,4 +199,12 @@ public class GameTest {
         assertThat(new GameBuilder().build().getState().getValueState(), CoreMatchers.is(equalTo(StateValue.INITIAL)));
     }
 
+    @Test
+    void testGivenNewGameWhenGameBuilderIsCreatedAndNextStateThenNextStateReturned() {
+        Game game = new GameBuilder().build();
+        game.getState().next();
+
+        assertThat(game.getState().getValueState(), CoreMatchers.is(equalTo(StateValue.IN_GAME)));
+    }
+
 }
