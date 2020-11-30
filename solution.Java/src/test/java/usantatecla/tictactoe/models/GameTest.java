@@ -7,7 +7,6 @@ import usantatecla.tictactoe.types.StateValue;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 
 public class GameTest {
@@ -193,11 +192,6 @@ public class GameTest {
                                                     " X ",
                                                     "   ").build();
         assertThat(game.equals(game), is(true));
-    }
-
-    @Test
-    void testGivenNewGameThenIntialStateIsCreated() {
-        assertThat(new GameBuilder().createState(), is(instanceOf(State.class)));
     }
 
     @Test
