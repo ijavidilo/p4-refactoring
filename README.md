@@ -1,6 +1,6 @@
 # P4: Refactoring - Javier Diaz Lopez (Parte 6: TDD práctica TicTacToe)
   * ## Anotaciones alumno: 
-  > Aplicamos TDD a la version de la práctica "modelViewPresenter - presentationModel" de TicTacToe añadiendo poco a poco la funcionalidad necesaria hasta llegar a la version "withComposite".
+  > Aplicamos TDD a la version de la práctica "modelViewPresenter - presentationModel" de TicTacToe añadiendo poco a poco la funcionalidad necesaria hasta llegar a la version "withComposite". No se ha llegado hasta el final, pero se a aplicado TDD a varias funcionalidades (Estados, doble despacho/inversion de dependencias en controladores/tests)
 ### Instrucciones de entrega
 
 Entrega de un proyecto público en git varias ramas:
