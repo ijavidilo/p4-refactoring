@@ -1,5 +1,6 @@
 package usantatecla.tictactoe.models;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import usantatecla.tictactoe.types.StateValue;
@@ -30,6 +31,21 @@ public class StateTest {
     public void testNextStateOrderedValueThenOk() {
         state.next();
         assertThat(state.getValueState(), is(equalTo(StateValue.IN_GAME)));
+    }
+
+    @Test
+    public void testLimitStatesOrderedValueThenError() {
+        Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            for (int i = 0; i < StateValue.values().length; i++) {
+                state.next();
+            }
+        });
+    }
+
+    @Test
+    public void testResetStateValueThenOk() {
+        state.reset();
+        assertThat(state.getValueState(), is(equalTo(StateValue.INITIAL)));
     }
 
 }
