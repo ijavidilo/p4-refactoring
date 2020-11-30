@@ -73,4 +73,9 @@ public class Game {
         assert this.state != null;
         return this.state.getValueState();
     }
+
+    public void next() {
+        assert this.state != null;
+        this.state.next();
+    }
 }

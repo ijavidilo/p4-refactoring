@@ -202,7 +202,7 @@ public class GameTest {
     @Test
     void testGivenNewGameWhenGameBuilderIsCreatedAndNextStateThenNextStateReturned() {
         Game game = new GameBuilder().build();
-        game.getState().next();
+        game.next();
 
         assertThat(game.getValueState(), CoreMatchers.is(equalTo(StateValue.IN_GAME)));
     }
