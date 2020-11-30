@@ -7,7 +7,7 @@ public class State {
     private StateValue stateValue;
 
     public State() {
-        init();
+        this.init();
     }
 
     private void init() {
@@ -22,5 +22,7 @@ public class State {
         this.stateValue = StateValue.values()[this.stateValue.ordinal()+1];
     }
 
-
+    public void reset() {
+        this.init();
+    }
 }
