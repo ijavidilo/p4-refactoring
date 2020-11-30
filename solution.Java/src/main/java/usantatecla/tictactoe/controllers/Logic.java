@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Logic {
     private Game game;
-    private Map<StateValue, Controller> controllers;
+    private Map<StateValue, AcceptorController> controllers;
 
     public Logic() {
         this.game = new Game();
@@ -19,7 +19,7 @@ public class Logic {
         this.controllers.put(StateValue.EXIT, null);
     }
 
-    public Controller getController() {
+    public AcceptorController getController() {
         return this.controllers.get(this.game.getValueState());
     }
 }
