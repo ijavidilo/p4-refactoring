@@ -43,6 +43,10 @@ public class GameBuilder {
         return game;
     }
 
+    State createState() {
+        return new State();
+    }
+
     private void readRows() {
         for (int i = 0; i < strings.size(); i++) {
             for (int j = 0; j < strings.get(i).length(); j++) {
