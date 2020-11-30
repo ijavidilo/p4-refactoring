@@ -29,7 +29,7 @@ public class StateTest {
     @Test
     public void testNextStateOrderedValueThenOk() {
         state.next();
-        assertThat(state.getValueState(), is(nullValue()));
+        assertThat(state.getValueState(), is(equalTo(StateValue.IN_GAME)));
     }
 
 }
