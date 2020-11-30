@@ -7,6 +7,10 @@ public class State {
     private StateValue stateValue;
 
     public State() {
+        init();
+    }
+
+    private void init() {
         this.stateValue = StateValue.INITIAL;
     }
 
