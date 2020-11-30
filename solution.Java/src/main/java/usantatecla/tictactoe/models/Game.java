@@ -6,7 +6,8 @@ public class Game {
     
     private Board board;
     private Turn turn;
-    
+    private State state;
+
     public Game() {
         this.reset();
     }
@@ -14,7 +15,12 @@ public class Game {
     public void reset() {
         this.board = new Board();
         this.turn = new Turn(this.board);
+        this.state = new State();
 	}
+
+	public State getState() {
+        return this.state;
+    }
 
     public void setUsers(int users) {
 		this.turn.setUsers(users);

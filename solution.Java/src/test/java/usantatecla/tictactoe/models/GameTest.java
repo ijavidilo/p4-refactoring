@@ -202,9 +202,7 @@ public class GameTest {
 
     @Test
     void testGivenNewGameWhenGameBuilderIsCreatedThenIntialStateReturned() {
-        GameBuilder gameBuilder = new GameBuilder();
-        gameBuilder.build();
-        assertThat(gameBuilder.getState().getValueState(), CoreMatchers.is(equalTo(StateValue.INITIAL)));
+        assertThat(new GameBuilder().build().getState().getValueState(), CoreMatchers.is(equalTo(StateValue.INITIAL)));
     }
 
 }

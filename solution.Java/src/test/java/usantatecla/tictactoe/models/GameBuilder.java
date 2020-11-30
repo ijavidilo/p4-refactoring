@@ -36,7 +36,6 @@ public class GameBuilder {
 
     Game build() {
         Game game = new Game();
-        this.state = createState();
         game.setUsers(this.users);
         if (this.strings.size() != 0) {
             readRows();
