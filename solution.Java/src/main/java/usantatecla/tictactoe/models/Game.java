@@ -19,10 +19,6 @@ public class Game {
         this.state = new State();
     }
 
-    public State getState() {
-        return this.state;
-    }
-
     public void setUsers(int users) {
         this.turn.setUsers(users);
     }
