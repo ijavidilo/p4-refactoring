@@ -2,9 +2,9 @@ package usantatecla.tictactoe.models;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import usantatecla.tictactoe.types.StateValue;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class StateTest {
@@ -19,6 +19,11 @@ public class StateTest {
     @Test
     public void testNullConstructorStateThenOk() {
         assertThat(state.getValueState(), is(nullValue()));
+    }
+
+    @Test
+    public void testInitialConstructorStateThenOk() {
+        assertThat(state.getValueState(), is(equalTo(StateValue.INITIAL)));
     }
 
 }
