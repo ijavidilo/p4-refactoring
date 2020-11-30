@@ -34,7 +34,7 @@ public class GameBuilder {
         return this;
     }
 
-    Game build() {
+    public Game build() {
         Game game = new Game();
         game.setUsers(this.users);
         if (this.strings.size() != 0) {

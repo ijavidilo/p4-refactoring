@@ -4,7 +4,7 @@ import usantatecla.tictactoe.models.Coordinate;
 import usantatecla.tictactoe.models.Game;
 import usantatecla.tictactoe.models.Token;
 
-public abstract class Controller {
+public abstract class Controller implements AcceptorController {
     
     protected Game game;
 
