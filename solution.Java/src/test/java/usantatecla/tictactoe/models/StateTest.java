@@ -26,4 +26,10 @@ public class StateTest {
         assertThat(state.getValueState(), is(equalTo(StateValue.INITIAL)));
     }
 
+    @Test
+    public void testNextStateOrderedValueThenOk() {
+        state.next();
+        assertThat(state.getValueState(), is(nullValue()));
+    }
+
 }

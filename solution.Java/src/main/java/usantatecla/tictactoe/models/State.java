@@ -14,4 +14,8 @@ public class State {
         return this.stateValue;
     }
 
+    public void next() {
+    }
+
+
 }
