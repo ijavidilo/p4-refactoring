@@ -8,14 +8,12 @@ import org.mockito.Mock;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 import usantatecla.tictactoe.controllers.ResumeController;
-import usantatecla.tictactoe.models.Game;
 import usantatecla.utils.Console;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mockStatic;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.openMocks;
 
 @ExtendWith(MockitoExtension.class)
@@ -33,6 +31,7 @@ public class ResumeViewTest {
     @BeforeEach
     void before() {
         openMocks(this);
+        resumeController = mock(ResumeController.class);
     }
 
     @Test
@@ -40,7 +39,7 @@ public class ResumeViewTest {
         try (MockedStatic console = mockStatic(Console.class)) {
             when(this.console.readChar(anyString())).thenReturn('n');
             console.when(Console::getInstance).thenReturn(this.console);
-            assertThat(this.resumeView.interact(), is(false));
+            assertThat(this.resumeView.interact(this.resumeController), is(false));
         }
     }
 
@@ -50,7 +49,7 @@ public class ResumeViewTest {
             when(this.console.readChar(anyString())).thenReturn('y');
             this.resumeController.resume();
             console.when(Console::getInstance).thenReturn(this.console);
-            assertThat(this.resumeView.interact(), is(true));
+            assertThat(this.resumeView.interact(this.resumeController), is(true));
         }
     }
 }

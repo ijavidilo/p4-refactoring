@@ -34,6 +34,7 @@ public class PlayViewTest {
     void before() {
         openMocks(this);
         this.playView = spy(this.playView);
+        this.playController = mock(PlayController.class);
     }
 
     @Test
@@ -47,7 +48,7 @@ public class PlayViewTest {
             when(this.playController.isTicTacToe()).thenReturn(true);
             when(this.playController.getToken()).thenReturn(Token.X);
             console.when(Console::getInstance).thenReturn(this.console);
-            this.playView.interact();
+            this.playView.interact(playController);
             verify(this.playController).put(new Coordinate(0, 0));
             verify(this.console).writeln(Message.PLAYER_WIN.getMessage());
         }
@@ -65,7 +66,7 @@ public class PlayViewTest {
             when(this.playController.isTicTacToe()).thenReturn(true);
             when(this.playController.getToken()).thenReturn(Token.X);
             console.when(Console::getInstance).thenReturn(this.console);
-            this.playView.interact();
+            this.playView.interact(playController);
             verify(this.playController).put(coordinate);
             verify(this.console).writeln(Message.PLAYER_WIN.toString());
         }
@@ -82,7 +83,7 @@ public class PlayViewTest {
             when(this.playController.isTicTacToe()).thenReturn(true);
             when(this.playController.getToken()).thenReturn(Token.X);
             console.when(Console::getInstance).thenReturn(this.console);
-            this.playView.interact();
+            this.playView.interact(playController);
             verify(this.playController).move(new Coordinate(0, 0), new Coordinate(1, 1));
             verify(this.console).writeln(Message.PLAYER_WIN.toString());
         }
@@ -101,7 +102,7 @@ public class PlayViewTest {
             when(this.playController.isTicTacToe()).thenReturn(true);
             when(this.playController.getToken()).thenReturn(Token.X);
             console.when(Console::getInstance).thenReturn(this.console);
-            this.playView.interact();
+            this.playView.interact(playController);
             verify(this.playController).move(origin, target);
             verify(this.console).writeln(Message.PLAYER_WIN.toString());
         }
