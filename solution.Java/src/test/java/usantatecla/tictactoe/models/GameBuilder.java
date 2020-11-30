@@ -10,6 +10,7 @@ public class GameBuilder {
     private List<String> strings;
     private List<Coordinate> xCoordinates;
     private List<Coordinate> oCoordinates;
+    private State state;
 
     public GameBuilder() {
         this.users = 0;
@@ -35,6 +36,7 @@ public class GameBuilder {
 
     Game build() {
         Game game = new Game();
+        this.state = createState();
         game.setUsers(this.users);
         if (this.strings.size() != 0) {
             readRows();
@@ -45,6 +47,10 @@ public class GameBuilder {
 
     State createState() {
         return new State();
+    }
+
+    State getState() {
+        return this.state;
     }
 
     private void readRows() {

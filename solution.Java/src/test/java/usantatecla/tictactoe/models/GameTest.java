@@ -1,8 +1,11 @@
 package usantatecla.tictactoe.models;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 import usantatecla.tictactoe.types.Error;
+import usantatecla.tictactoe.types.StateValue;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
@@ -195,6 +198,13 @@ public class GameTest {
     @Test
     void testGivenNewGameThenIntialStateIsCreated() {
         assertThat(new GameBuilder().createState(), is(instanceOf(State.class)));
+    }
+
+    @Test
+    void testGivenNewGameWhenGameBuilderIsCreatedThenIntialStateReturned() {
+        GameBuilder gameBuilder = new GameBuilder();
+        gameBuilder.build();
+        assertThat(gameBuilder.getState().getValueState(), CoreMatchers.is(equalTo(StateValue.INITIAL)));
     }
 
 }
