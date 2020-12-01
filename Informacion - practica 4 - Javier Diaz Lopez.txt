@@ -1,0 +1,27 @@
+Alumno:
+-------
+Javier Díaz López
+
+URL repositorio práctica: 
+-------------------------
+https://github.com/ijavidilo/p4-refactoring
+	- **nullObjectPattern** -> https://github.com/ijavidilo/p4-refactoring/tree/nullObjectPattern
+	- **genericCoordinate** -> https://github.com/ijavidilo/p4-refactoring/tree/genericCoordinate
+	- **onlyOneView** -> https://github.com/ijavidilo/p4-refactoring/tree/onlyOneView
+	- **mvp.pv** -> https://github.com/ijavidilo/p4-refactoring/tree/mvp.pv
+	- **intervals** -> https://github.com/ijavidilo/p4-refactoring/tree/intervals
+	- **tictactoe.tdd** -> https://github.com/ijavidilo/p4-refactoring/tree/tictactoe.tdd
+
+Evaluación del profesor:
+------------------------
+(Calificación: 10)
+
+Lo menos bueno:
+	- No están explicitamente escritos los requisitos en el Aula Virtual como para anteriores prácticas. (en que git hay que crearlo, que nombre de las ramas...). Al menos en mi caso, me ayuda a estar mejor centrado/planificado.
+
+Lo bueno:
+	- Es de mucha ayuda que estemos "repasando/uniendo" todo lo aprendido durante este primer modulo en cada concepto nuevo para asi interiorizar todo el temario de una manera amena.
+
+
+Comentario adicional: Sinceramente, yo no me apunté al master por este temario, pero solo con que Luis pudiera compartir su experiencia con nosotros ya la nota tiene que ser un 10 por si misma. Ya podré decir que me han dado clases dos grandes. Gracias por todo!
+	
